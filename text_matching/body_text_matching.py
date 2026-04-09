@@ -28,7 +28,7 @@ MATCH_TABLE = {
     # 'SINUSES': {'one': ['SINUSES']},
     'OTHER_HEAD': {'one': ['OTHER_HEAD']},
     'HEAD&NECK': {'cond': 'and', 'one': ['HEAD', 'NECK']},
-    'HEAD&?': {'one': ['HEAD'], 'two': ['*'], 'zero': ['Neck']},
+    'HEAD&?': {'one': ['HEAD'], 'two': ['*'], 'zero': ['NECK']},
 }
 
 body_kwargs = {
