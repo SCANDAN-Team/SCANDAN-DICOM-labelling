@@ -53,7 +53,7 @@ SEQ_DICT = {
 
 MATCH_TABLE = {
     'T1': {'one': ['T1'],
-           'two': ['T1?', 'GRE', 'FAT SAT', 'FLAIR_UKN', 'FLAIR'],
+           'two': ['T1?', 'GRE', 'FAT SAT', 'FLAIR'],
            'zero': ['DSE']},
     'T2': {'one': ['T2'], 'two': [], 'zero': ['FLAIR', 'GRE', 'T2*', 'T2ci3d',
                                               'T2*T1']},
@@ -62,9 +62,11 @@ MATCH_TABLE = {
              'zero': ['T2*T1']},
     'T2*': {'cond': 'and', 'one': ['T2', 'GRE'], 'zero': ['T2*T1']},
     'T2*T1': {'one': ['T2*T1'], 'two': ['T2', 'T2*', 'GRE']},
-    'FLAIR': {'one': ['FLAIR'], 'two': ['T2', 'FLAIR?'], 'zero': []},
+    'FLAIR': {'one': ['FLAIR'], 'two': ['T2',
+                                        # 'FLAIR?'
+                                        ], 'zero': []},
     'T1w_UKN': {'one': ['T1?'], 'two': [], 'zero': ['DSE', 'T1']},
-    'FLAIR_UKN': {'one': ['FLAIR?'], 'two': ['T2'], 'zero': ['FLAIR']},
+    # 'FLAIR_UKN': {'one': ['FLAIR?'], 'two': ['T2'], 'zero': ['FLAIR']},
     'LOCALISER': {'one': ['LOC'], 'two': ['*'], 'zero': []},
     'DWI': {'one': ['DWI', 'DWI_ADC', 'DWI_FA', 'DWI_DTI?'],
             'two': ['DWI_ADC?', 'DWI_DTI??']},
