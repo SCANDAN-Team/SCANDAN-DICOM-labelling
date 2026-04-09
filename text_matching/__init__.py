@@ -4,4 +4,4 @@ from .contrast_text_matching import contrast_kwargs
 from .sequence_text_matching import sequence_kwargs
 from .boolean_text_matching import boolean_kwargs
 from .empty_text_matching import empty_kwargs
-from .kernel_text_matching import kernel_kwargs
+# from .kernel_text_matching import kernel_kwargs
