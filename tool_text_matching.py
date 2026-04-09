@@ -37,13 +37,13 @@ class TextMatching():
         if '*' in one_s:
             one_s |= all_s
         elif '*' in two_s:
-            # two_s |= all_s
-            pass
+            two_s |= all_s
         else:
             zero_s |= all_s
         one_s -= tmp
         zero_s -= tmp
-        return {0: zero_s | nan_s, 1: one_s, 'cond': cond}
+        two_s -= tmp
+        return {0: zero_s | nan_s, 1: one_s, 2: two_s, 'cond': cond}
 
     @classmethod
     def get_cross_keys(cls, matched, table):
