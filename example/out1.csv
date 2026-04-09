@@ -1,0 +1,5 @@
+SeriesInstanceUID,SeriesDescription,Sequence_SERDesc,debug
+1,t1,T1,T1
+2,t2,T2,T2
+3,t1_flair,T1,T1+FLAIR
+4,t2_flair,FLAIR,T2+FLAIR

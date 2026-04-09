@@ -4,7 +4,7 @@ import text_matching as txm_args
 from tool_text_matching import TextMatching
 
 
-def main_classify(out_path, mt_path):
+def main_classify(mt_path, out_path):
     # txm.mix_args is simply a union of dict
     # there's 2 type of dictionary
     # the first is the for the columns to use. It contains the key to use as
@@ -32,9 +32,9 @@ def main_classify(out_path, mt_path):
 # it can contains more, it doesn't matter, it will ignore the rest
 def main():
     # the path to the csv which contains the columns you want to use
-    ser_mt_MR = 'path'
+    ser_mt_MR = 'example/ex1.csv'
     # path to the output file (name)
-    out_sequence_label = 'path'
+    out_sequence_label = 'example/out1.csv'
     main_classify(ser_mt_MR, out_sequence_label)
 
 

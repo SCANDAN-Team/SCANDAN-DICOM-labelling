@@ -1,0 +1,5 @@
+SeriesInstanceUID,SeriesDescription,BodyPartExamined
+1,t1,head
+2,t2,neck
+3,t1_flair,head_neck
+4,t2_flair,heart
