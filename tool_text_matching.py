@@ -74,7 +74,7 @@ class TextMatching():
         # out = np.full(n, '',
         #    dtype=f'S{len(max(list(idx.keys()), key=len))+3}')
         for key, val in list(idx.items())[::-1]:
-            out[val] += key
+            out[val] = key
         return out
 
     @classmethod
