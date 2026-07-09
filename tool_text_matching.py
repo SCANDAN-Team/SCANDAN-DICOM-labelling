@@ -89,15 +89,15 @@ class TextMatching():
             axis=1).rename('debug')
         return out, debug
 
-    def __classify__(self):
-        data = pd.read_csv(self._in_path, sep=self._sep)
+    def __classify__(self, data):
         res, debug = self.match_fn(data[self._col], self._seq,
                                    self._match_table)
         return pd.concat([data[self._key], data[self._col],
                           pd.Series(res, name=self._out), debug], axis=1)
 
     def __transform_fn__(self):
-        sequence = self.__classify__()
+        data = pd.read_csv(self._in_path, sep=self._sep)
+        sequence = self.__classify__(data)
         sequence.to_csv(self._out_path, index=False)
 
 
