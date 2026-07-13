@@ -9,7 +9,8 @@ to_export = [
     txm_args.body_kwargs,
     txm_args.contrast_kwargs,
     txm_args.boolean_kwargs,
-    txm_args.empty_kwargs
+    txm_args.empty_kwargs,
+    txm_args.kernel_kwargs,
 ]
 
 

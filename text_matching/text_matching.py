@@ -60,8 +60,8 @@ contrast_agent_kwargs = {
 }
 
 
-# convo_kernel_kwargs = {
-#     'key': 'SeriesInstanceUID',
-#     'col': 'ConvolutionKernel',
-#     'out': 'Kernel'
-# }
+convo_kernel_kwargs = {
+    'key': 'SeriesInstanceUID',
+    'col': 'ConvolutionKernel',
+    'out': 'Kernel'
+}
