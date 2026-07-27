@@ -1,5 +1,6 @@
 import pandas as pd
 import os
+import argparse
 
 csv_dir = 'csv'
 
@@ -44,5 +45,9 @@ def load_directory_csv(path):
     return res
 
 
-if __name__ == '__main__':
-    load_directory_csv(csv_dir)
+def from_csv():
+    argp = argparse.ArgumentParser('From csv')
+    argp.add_argument("dir", type=str, default='csv',
+                      help="The folder directory")
+    args = argp.parse_args()
+    load_directory_csv(args.dir)
