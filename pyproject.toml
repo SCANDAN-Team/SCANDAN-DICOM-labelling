@@ -1,0 +1,35 @@
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dicom_labelling"
+version = "0.0.1"
+dependencies = [
+    "pandas",
+]
+description = "DICOM label identification for MRI and CT"
+author="JackRed (Dorian Gouzou)"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+Repository = "https://github.com/brain-code-uoe/DICOM-labelling.git"
+
+[tool.setuptools.packages.find]
+where = ["dicom_labelling"]
+include = ["text_matching_args"]  # alternatively: `exclude = ["additional*"]`
+namespaces = false
+
+[project.scripts]
+from_csv = "dicom_labelling:from_csv"
+to_csv = "dicom_labelling:to_csv"
+
+[project.optional-dependencies]
+tests = ["pytest"]
+
+[dependency-groups]
+tests = [
+    "dicom_labelling[test]",
+]
+[pytest]
+addopts = ["--import-mode=importlib"]

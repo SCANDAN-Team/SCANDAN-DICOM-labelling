@@ -1,8 +1,7 @@
-from text_matching import text_matching as txm
-import text_matching as txm_args
-
-from tool_text_matching import TextMatching
-
+from dicom_labelling import metadata_kwargs as met_args
+from dicom_labelling import text_matching_args as txm_args
+from dicom_labelling import TextMatching, mix_args
+from difflib import unified_diff
 
 def main_classify(mt_path, out_path):
     # txm.mix_args is simply a union of dict
@@ -21,8 +20,8 @@ def main_classify(mt_path, out_path):
     seq_series_desc_class = TextMatching(
         in_path=mt_path,
         out_path=out_path,
-        **txm.mix_args(txm.series_desc_kwargs,
-                       txm_args.sequence_kwargs))
+        **mix_args(met_args.series_desc_kwargs,
+                 txm_args.sequence_kwargs))
     seq_series_desc_class.__transform_fn__()
 
 
@@ -30,13 +29,15 @@ def main_classify(mt_path, out_path):
 # the key columns, provided in the first dictionary. E.g. SeriesInstanceUID
 # the columns to parse. E.g. SeriesDescription
 # it can contains more, it doesn't matter, it will ignore the rest
-def main():
+def test_main_csv():
     # the path to the csv which contains the columns you want to use
-    ser_mt_MR = 'example/ex1.csv'
+    ser_mt_MR = './tests/example/ex1.csv'
     # path to the output file (name)
-    out_sequence_label = 'example/out1.csv'
+    out_sequence_label = './tests/example/out1.csv'
     main_classify(ser_mt_MR, out_sequence_label)
-
-
-if __name__ == '__main__':
-    main()
+    with open('./tests/example/out_test.csv', "r") as f:
+        expected_lines = f.readlines()
+    with open(out_sequence_label, "r") as f:
+        actual_lines = f.readlines()
+    diff = list(unified_diff(expected_lines, actual_lines))
+    assert diff == [], "Unexpected file contents:\n" + "".join(diff)
