@@ -14,6 +14,7 @@ Michael P J Camilleri, Dorian Gouzou, et al., A large dataset of brain imaging l
 - **Update**: CT Kernel rules are now available in the `main` branch.
 
 ## Version
+- **Fork with new update**: https://github.com/brain-code-uoe/DICOM-labelling/ (this repository should receive pull request, but the development is carried on the new repository)
 - `main`: the latest version, improved on in-house research dataset (includes better regex catching, CT kernel rules and better SWI/DWI differentiation)
 - `SCANDAN`: the one used for the results of the SCANDAN paper and the one used to generate the labelling currently available on the Brain Health Data. 
 
